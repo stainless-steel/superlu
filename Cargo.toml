@@ -1,0 +1,9 @@
+[package]
+name = "superlu"
+version = "0.1.0"
+authors = ["Ivan Ukhov <ivan.ukhov@gmail.com>"]
+license = "MIT"
+repository = "https://github.com/stainless-steel/superlu"
+homepage = "https://github.com/stainless-steel/superlu"
+documentation = "https://stainless-steel.github.io/superlu"
+description = "The package provides an interface to SuperLU."
