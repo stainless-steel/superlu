@@ -7,12 +7,17 @@ extern crate matrix;
 extern crate superlu_sys as ffi;
 
 use matrix::Compressed;
-use std::convert::From;
 use std::mem;
 
 /// A super matrix.
 pub struct SuperMatrix {
     raw: ffi::SuperMatrix,
+}
+
+/// A type capable of instantiating itself from a super matrix.
+pub trait FromSuperMatrix {
+    /// Create an instance from a super matrix.
+    fn from_super_matrix(&SuperMatrix) -> Option<Self>;
 }
 
 impl SuperMatrix {
@@ -56,8 +61,8 @@ impl Drop for SuperMatrix {
     }
 }
 
-impl<'l> From<&'l SuperMatrix> for Option<Compressed<f64>> {
-    fn from(matrix: &'l SuperMatrix) -> Option<Compressed<f64>> {
+impl FromSuperMatrix for Compressed<f64> {
+    fn from_super_matrix(matrix: &SuperMatrix) -> Option<Compressed<f64>> {
         let raw = &matrix.raw;
 
         let rows = raw.nrow as usize;
@@ -93,12 +98,5 @@ impl<'l> From<&'l SuperMatrix> for Option<Compressed<f64>> {
             (ffi::Stype_t::SLU_NCP, ffi::Dtype_t::SLU_D, _) => unimplemented!(),
             _ => return None,
         }
-    }
-}
-
-impl From<SuperMatrix> for Option<Compressed<f64>> {
-    #[inline]
-    fn from(matrix: SuperMatrix) -> Option<Compressed<f64>> {
-        (&matrix).into()
     }
 }
