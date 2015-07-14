@@ -1,8 +1,8 @@
-# SuperLU [![Build Status][status-svg]][status-url]
+# SuperLU [![Version][version-img]][version-url] [![Status][status-img]][status-url]
 
 The package provides an interface to [SuperLU][1].
 
-## [Documentation][2]
+## [Documentation][doc]
 
 ## Contributing
 
@@ -11,7 +11,9 @@ The package provides an interface to [SuperLU][1].
 3. Open a pull request.
 
 [1]: http://crd-legacy.lbl.gov/~xiaoye/SuperLU
-[2]: https://stainless-steel.github.io/superlu
 
-[status-svg]: https://travis-ci.org/stainless-steel/superlu.svg?branch=master
+[version-img]: https://img.shields.io/crates/v/superlu.svg
+[version-url]: https://crates.io/crates/superlu
+[status-img]: https://travis-ci.org/stainless-steel/superlu.svg?branch=master
 [status-url]: https://travis-ci.org/stainless-steel/superlu
+[doc]: https://stainless-steel.github.io/superlu
