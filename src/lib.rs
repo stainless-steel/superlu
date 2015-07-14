@@ -73,12 +73,12 @@ impl FromSuperMatrix for Compressed<f64> {
                 let store = &*(raw.Store as *const ffi::NCformat);
                 let nonzeros = store.nnz as usize;
 
-                let mut values = Vec::with_capacity(nonzeros);
+                let mut data = Vec::with_capacity(nonzeros);
                 let mut indices = Vec::with_capacity(nonzeros);
                 let mut offsets = Vec::with_capacity(columns + 1);
 
                 for i in 0..nonzeros {
-                    values.push(*(store.nzval.offset(i as isize) as *const libc::c_double));
+                    data.push(*(store.nzval as *const libc::c_double).offset(i as isize));
                     indices.push(*store.rowind.offset(i as isize) as usize);
                 }
                 for i in 0..(columns + 1) {
@@ -89,7 +89,7 @@ impl FromSuperMatrix for Compressed<f64> {
                     columns: columns,
                     nonzeros: nonzeros,
                     format: matrix::Major::Column,
-                    data: values,
+                    data: data,
                     indices: indices,
                     offsets: offsets,
                 })
