@@ -1,5 +1,10 @@
 language: rust
-sudo: required
+sudo: false
+
+addons:
+  apt:
+    packages:
+      - gfortran
 
 after_success:
   - curl https://stainless-steel.github.io/travis/after_success.sh | bash
