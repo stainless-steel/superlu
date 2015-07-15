@@ -73,23 +73,24 @@ impl FromSuperMatrix for Compressed<f64> {
                 let store = &*(raw.Store as *const ffi::NCformat);
                 let nonzeros = store.nnz as usize;
 
-                let mut data = Vec::with_capacity(nonzeros);
+                let mut values = Vec::with_capacity(nonzeros);
                 let mut indices = Vec::with_capacity(nonzeros);
                 let mut offsets = Vec::with_capacity(columns + 1);
 
                 for i in 0..nonzeros {
-                    data.push(*(store.nzval as *const libc::c_double).offset(i as isize));
+                    values.push(*(store.nzval as *const libc::c_double).offset(i as isize));
                     indices.push(*store.rowind.offset(i as isize) as usize);
                 }
                 for i in 0..(columns + 1) {
                     offsets.push(*store.colptr.offset(i as isize) as usize);
                 }
 
-                Some(Compressed { rows: rows,
+                Some(Compressed {
+                    rows: rows,
                     columns: columns,
                     nonzeros: nonzeros,
                     format: matrix::Major::Column,
-                    data: data,
+                    values: values,
                     indices: indices,
                     offsets: offsets,
                 })
