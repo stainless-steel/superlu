@@ -63,6 +63,8 @@ impl Drop for SuperMatrix {
 
 impl FromSuperMatrix for Compressed<f64> {
     fn from_super_matrix(matrix: &SuperMatrix) -> Option<Compressed<f64>> {
+        use matrix::compressed::Format;
+
         let raw = &matrix.raw;
 
         let rows = raw.nrow as usize;
@@ -89,7 +91,7 @@ impl FromSuperMatrix for Compressed<f64> {
                     rows: rows,
                     columns: columns,
                     nonzeros: nonzeros,
-                    format: matrix::Major::Column,
+                    format: Format::Column,
                     values: values,
                     indices: indices,
                     offsets: offsets,
