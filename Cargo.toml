@@ -1,6 +1,6 @@
 [package]
 name = "superlu"
-version = "0.2.4"
+version = "0.2.5"
 authors = ["Ivan Ukhov <ivan.ukhov@gmail.com>"]
 license = "MIT"
 repository = "https://github.com/stainless-steel/superlu"
@@ -10,5 +10,5 @@ description = "The package provides an interface to SuperLU."
 
 [dependencies]
 libc = "*"
-matrix = "0.14"
+matrix = "0.15"
 superlu-sys = "*"
