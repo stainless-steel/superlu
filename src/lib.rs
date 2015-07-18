@@ -6,7 +6,7 @@ extern crate libc;
 extern crate matrix;
 extern crate superlu_sys as ffi;
 
-use matrix::Compressed;
+use matrix::format::Compressed;
 use std::mem;
 
 /// A super matrix.
@@ -63,7 +63,7 @@ impl Drop for SuperMatrix {
 
 impl FromSuperMatrix for Compressed<f64> {
     fn from_super_matrix(matrix: &SuperMatrix) -> Option<Compressed<f64>> {
-        use matrix::compressed::Format;
+        use matrix::format::compressed::Variant;
 
         let raw = &matrix.raw;
 
@@ -91,7 +91,7 @@ impl FromSuperMatrix for Compressed<f64> {
                     rows: rows,
                     columns: columns,
                     nonzeros: nonzeros,
-                    format: Format::Column,
+                    variant: Variant::Column,
                     values: values,
                     indices: indices,
                     offsets: offsets,
