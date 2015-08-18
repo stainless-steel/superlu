@@ -1,5 +1,9 @@
 language: rust
 sudo: false
+rust:
+  - stable
+  - beta
+  - nightly
 
 addons:
   apt:
@@ -11,7 +15,8 @@ after_success:
 
 env:
   global:
-    secure: ADK4rWz7zGKsqrw0TCB6znwcbN9zqnsMH1VzAaq4CWUHgi4V7W5EWiEoPPv+fOORd345jX0lLzF0NASc+jl8ng/A054XsG3qtgG06NbHsf0JG4xCz2r44nQRROUWR7GnJypPvhRTwy0ODgDBrFMKG5pyrcL/pFO5D9NTxvtQiL0h9S103gRq7veRn7vM2T8FMBvEqFVwD62rwWXu2+KN4663+cj/J2xo6JiVyqR/XSQg6YXw+H48/uCyzJeUhYaJygKHosG2pl5jSNrnIsGOjrPZoYWWMMJERdvAzoN8YJkwcABtfnA2b2DgH3Cri0sBhczuS0/L3J2pOo2MBOtaNuT23Fud+LYGKkAA4vhvFoHg6Lx/nzCBh+lmDh7KRh95eZ82fWeeLaRw16DetXqrtOs7fCN6HZ2F7ucYU0vHZYXIdgEn7C9H06UUKelHWLyL/KuVSMtx0UonN0RIltrpIENCnjRHZT/hL9Lv6lHSm7y9u7WduXnrfgDTFY8Avlf/PLPlIAAwnwYrxwzNFCz0sE9XtPJGZO+vkUOdTPmlf1ELi1J40jug2nxYxm0TfIbLYn6C4ySb3D7xnOQ9irRa01XmbxibUT+XpAz41fwiunB94KZ6IlDgnYlvFSizjsy3SK5p/1vMS28hXV3HtA97LAFIw/+RXb6DfsM4onPSOxU=
+    - RUSTDOC_VERSION=nightly
+    - secure: XKSsYKtC/Zz+CBRmjk7qevXSXmuL9xHWviQrYEkh/69nZDLVGQSPRQSJLoyNXwBiAN26MSl2GRA8+cL+VasF5GbK1z/otUORGWeSxXXUgWb9bG/JPPwZNA/NpbaaHHfokJOkPLppCl6W8S/u2CcAKKx/1xDzvfqqD3AGvEnwjyr6hsKpOjwpHVJ+7E96RqnepT7yklkPC4mMNhIatksRCOtIEfIAn1+qCVQrE1zGrCZ6U13cp7yHeQ6xlrmaXuLLLrwEnXYD82JTYf2sMs+HR6OztwIxs/y0q8rLLJiXFGuosJofDUs9+1NALtJsyMQ+yysK3uH9vrO8ouD8bD7mU2fDz3eMS+rRJOfoAluPssMvoGQQ3J1DzUrfGgRB+Mtq0K6+m49yKBYdsS3LfzCyjIgzQxEIifRDVi/Mqqpm/I/fe7sFIrz/lYAXjWuLiw3efbp5kBme7nvvbO9t1SsDo5B/3goJMg1y3akKY4AS0OnJeiuyCS9Lh/6kXR0t1b8aBgUgzrbr+faYuy3RTMaR/yxjVjdRV+CeN/++7l/jCvLxQDDr1hnVbLj0TkNZY5tLhAHU5zWB5Gcwh+r7gOnUCMKOP46Vtg20z1ii1w/8mDsZZfzEyo5bY3OthByWqLZ2PX+2MAg/N8otu6WuvLvBCgYYV4aARPY3Fjb4NhNhCUY=
 
 notifications:
   email: false
