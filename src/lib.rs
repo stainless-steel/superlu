@@ -15,7 +15,7 @@ pub struct SuperMatrix {
 }
 
 /// A type capable of instantiating itself from a super matrix.
-pub trait FromSuperMatrix {
+pub trait FromSuperMatrix: Sized {
     /// Create an instance from a super matrix.
     fn from_super_matrix(&SuperMatrix) -> Option<Self>;
 }
