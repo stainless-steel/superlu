@@ -2,7 +2,7 @@
 
 The package provides an interface to [SuperLU][1].
 
-## [Documentation][doc]
+## [Documentation][documentation]
 
 ## Contribution
 
@@ -12,7 +12,7 @@ will be licensed according to the terms given in [LICENSE.md](LICENSE.md).
 
 [1]: http://crd-legacy.lbl.gov/~xiaoye/SuperLU
 
-[doc]: https://stainless-steel.github.io/superlu
+[documentation]: https://docs.rs/superlu
 [status-img]: https://travis-ci.org/stainless-steel/superlu.svg?branch=master
 [status-url]: https://travis-ci.org/stainless-steel/superlu
 [version-img]: https://img.shields.io/crates/v/superlu.svg

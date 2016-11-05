@@ -1,10 +1,10 @@
 [package]
 name = "superlu"
-version = "0.3.0"
+version = "0.3.1"
 license = "Apache-2.0/MIT"
 authors = ["Ivan Ukhov <ivan.ukhov@gmail.com>"]
 description = "The package provides an interface to SuperLU."
-documentation = "https://stainless-steel.github.io/superlu"
+documentation = "https://docs.rs/superlu"
 homepage = "https://github.com/stainless-steel/superlu"
 repository = "https://github.com/stainless-steel/superlu"
 
