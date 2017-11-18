@@ -1,6 +1,6 @@
-//! Interface to [SuperLU][1].
+//! Wrappers for [SuperLU].
 //!
-//! [1]: http://crd-legacy.lbl.gov/~xiaoye/SuperLU
+//! [superlu]: http://crd-legacy.lbl.gov/~xiaoye/SuperLU
 
 extern crate libc;
 extern crate matrix;
