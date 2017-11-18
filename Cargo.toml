@@ -1,12 +1,15 @@
 [package]
 name = "superlu"
-version = "0.3.1"
+version = "0.3.2"
 license = "Apache-2.0/MIT"
 authors = ["Ivan Ukhov <ivan.ukhov@gmail.com>"]
 description = "The package provides an interface to SuperLU."
 documentation = "https://docs.rs/superlu"
 homepage = "https://github.com/stainless-steel/superlu"
 repository = "https://github.com/stainless-steel/superlu"
+readme = "README.md"
+categories = ["api-bindings", "science"]
+keywords = ["linear-algebra"]
 
 [dependencies]
 libc = "0.2"
